@@ -11,13 +11,13 @@ public class GraphBFS{
         bfs(adjMatrix,0);
     }
     public static void addEdge(int[][] matrix,int source,int dest){
-        if(source>=0&&source<matrix.length&&dest>=0&&dest<matrix.length){
+        if(source>=0 && source<matrix.length && dest>=0 && dest<matrix.length){
             matrix[source][dest]=1;
             matrix[dest][source]=1;
         }
     }
     public static void bfs(int[][] matrix,int startVertex){
-        if(matrix==null||matrix.length==0||startVertex<0||startVertex>=matrix.length){
+        if(matrix==null || matrix.length==0 || startVertex<0 || startVertex>=matrix.length){
             return;
         }
         int v=matrix.length;
@@ -31,7 +31,7 @@ public class GraphBFS{
             int current=queue[head++];
             System.out.print(current+" ");
             for(int i=0;i<v;i++){
-                if(matrix[current][i]==1&&!visited[i]){
+                if(matrix[current][i]==1 && !visited[i]){
                     visited[i]=true;
                     queue[tail++]=i;
                 }
